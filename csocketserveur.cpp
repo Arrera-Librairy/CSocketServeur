@@ -11,7 +11,7 @@ CSocketServeur::CSocketServeur(QObject *parent) : QObject(parent) {
 }
 
 void CSocketServeur::startServer(int port) {
-    if (!server->listen(QHostAddress::Any, port)) {
+    if (!server->listen(QHostAddress::LocalHost, port)) {
         std::cout << "Server could not start!" << std::endl;
     } else {
         std::cout << "Server started!"<< std::endl;
